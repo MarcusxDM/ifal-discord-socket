@@ -19,13 +19,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
 
     with client_socket:
         print(f'Conexão recebida de {addr}')
-        # client_socket.sendall(b'Comecou o jogo')
-        qtd = 0
-        while client_socket.recv(1024).decode() != "tchau":
-            # Recebe dados do cliente
-            data = client_socket.recv(1024)
-            
-            if data.decode() == "!ping":
-                client_socket.sendall(b'pong')
+
+        # Recebe dados do cliente
+        data = client_socket.recv(1024)
+        
+        if data.decode() == "!socket":
         # Envia os dados de volta para o cliente
-        client_socket.sendall(b'Ja foi tarde! ', qtd)
+            client_socket.sendall(b'pong')
+        client_socket.close()

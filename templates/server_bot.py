@@ -1,7 +1,7 @@
 import socket
 import json
 
-CLIENT_PUBLIC_KEY = 'f325fcdd88cbb70c7e48af11f4f372e54b9b249f6c4e8eaf480907b40db90c4a'
+CLIENT_PUBLIC_KEY = 'key'
 
 def main():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
